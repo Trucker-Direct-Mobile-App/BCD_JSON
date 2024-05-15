@@ -212,3 +212,55 @@ const operationalBalanceField = document.getElementById('operationalBalanceField
        client.disconnect()
             
       } // End of getAccountsFromSeeds()
+
+# The following is instructions for sending tokens (in this example its XRP) for tn/dn js test drives
+
+// // *******************************************************
+// ******************** Send XRP *************************
+// *******************************************************
+
+      async function sendXRP() {
+      
+        results  = "Connecting to the selected ledger.\n"
+        standbyResultField.value = results
+        let net = getNet()
+        results = 'Connecting to ' + getNet() + '....'
+        const client = new xrpl.Client(net)
+        await client.connect()
+      
+        results  += "\nConnected. Sending XRP.\n"
+        standbyResultField.value = results
+      
+        const standby_wallet = xrpl.Wallet.fromSeed(standbySeedField.value)
+        const operational_wallet = xrpl.Wallet.fromSeed(operationalSeedField.value)
+        const sendAmount = standbyAmountField.value
+        
+        results += "\nstandby_wallet.address: = " + standby_wallet.address
+        standbyResultField.value = results
+      
+        // ------------------------------------------------------- Prepare transaction
+        // Note that the destination is hard coded.
+        const prepared = await client.autofill({
+          "TransactionType": "Payment",
+          "Account": standby_wallet.address,
+          "Amount": xrpl.xrpToDrops(sendAmount),
+          "Destination": standbyDestinationField.value
+        })
+      
+        // ------------------------------------------------ Sign prepared instructions
+        const signed = standby_wallet.sign(prepared)
+      
+        // -------------------------------------------------------- Submit signed blob
+        const tx = await client.submitAndWait(signed.tx_blob)
+      
+         results  += "\nBalance changes: " + 
+            JSON.stringify(xrpl.getBalanceChanges(tx.result.meta), null, 2)
+         standbyResultField.value = results
+
+        standbyBalanceField.value = 
+          (await client.getXrpBalance(standby_wallet.address))
+        operationalBalanceField.value = 
+          (await client.getXrpBalance(operational_wallet.address))                 
+        client.disconnect()
+      
+      } // End of sendXRP()
