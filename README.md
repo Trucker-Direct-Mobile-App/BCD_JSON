@@ -16,3 +16,22 @@ and develop an API utility for your BCD treasury, and also any XRPL token projec
 For every BCD in circulation there is a corresponding amount of XRP/XAU in one of the 3 treasury wallets today and forever.
 Build your dreams here and the public will come!!!
 invest in BCD and the public will thrive!!!
+
+# The following is a library of constants in js for transaction information
+
+// *** Define HTML Form Fields **
+const xls = document.getElementById("xls")
+const tn = document.getElementById("tn")
+const dn = document.getElementById("dn")
+const standbyResultField = document.getElementById('standbyResultField');
+const operationalResultsField = document.getElementById('operationalResultField');
+const standbyAccountField = document.getElementById('standbyAccountField');
+const standbyPubKeyField = document.getElementById('standbyPubKeyField');
+const standbyPrivKeyField = document.getElementById('standbyPrivKeyField');
+const standbyBalanceField = document.getElementById('standbyBalanceField');
+const standbySeedField = document.getElementById('standbySeedField');
+const operationalAccountField = document.getElementById('operationalAccountField');
+const operationalPubKeyField = document.getElementById('operationalPubKeyField');
+const operationalPrivKeyField = document.getElementById('operationalPrivKeyField');
+const operationalSeedField = document.getElementById('operationalSeedField');
+const operationalBalanceField = document.getElementById('operationalBalanceField');
