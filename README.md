@@ -54,7 +54,7 @@ const operationalSeedField = document.getElementById('operationalSeedField');
 
 const operationalBalanceField = document.getElementById('operationalBalanceField');
 
-# The following is for testnet/devnet developers who want to test drive their project in the BCD ecosystem
+# The following is for testnet/devnet java script AKA "tn/dn js" developers who want to develop and test drive their project in the BCD ecosystem
 
 // ************* Get the Preferred Network **************
     function getNet() {
@@ -63,6 +63,47 @@ const operationalBalanceField = document.getElementById('operationalBalanceField
            if (dn.checked) net = "wss://s.devnet.rippletest.net:51233"
            return net
         } // End of getNet()
+
+// *******************************************************
+// ********** Get Accounts from Seeds ******************** 
+// *******************************************************
+
+      async function getAccountsFromSeeds() {
+        let net = getNet()
+        const client = new xrpl.Client(net)
+        results = 'Connecting to ' + getNet() + '....'
+        standbyResultField.value = results
+        await client.connect()
+        results += '\nConnected, finding wallets.\n'
+        standbyResultField.value = results
+      
+        // -----------------------------------Find the test account wallets    
+        var lines = seeds.value.split('\n');
+
+        const standby_wallet = xrpl.Wallet.fromSeed(lines[0])
+        const operational_wallet = xrpl.Wallet.fromSeed(lines[1])
+      
+        // -----------------------------------Get the current balance.
+        const standby_balance = (await client.getXrpBalance(standby_wallet.address))
+        const operational_balance = (await client.getXrpBalance(operational_wallet.address))  
+        
+        // ------------------Populate the fields for Standby and Operational accounts
+        standbyAccountField.value = standby_wallet.address
+        standbyPubKeyField.value = standby_wallet.publicKey
+        standbyPrivKeyField.value = standby_wallet.privateKey
+        standbySeedField.value = standby_wallet.seed
+        standbyBalanceField.value = (await client.getXrpBalance(standby_wallet.address))
+      
+        operationalAccountField.value = operational_wallet.address
+        operationalPubKeyField.value = operational_wallet.publicKey
+        operationalPrivKeyField.value = operational_wallet.privateKey
+        operationalSeedField.value = operational_wallet.seed
+        operationalBalanceField.value = (await client.getXrpBalance(operational_wallet.address))
+      
+       client.disconnect()
+            
+      } // End of getAccountsFromSeeds()
+
 
 // *******************************************************              
 // ************* Get Account *****************************  
@@ -129,3 +170,45 @@ const operationalBalanceField = document.getElementById('operationalBalanceField
         seeds.value = standbySeedField.value + '\n' + operationalSeedField.value
         client.disconnect()
       } // End of getAccount()
+
+# The following code is for creating seed accounts during tn/dn js test drives
+
+// *******************************************************
+// ********** Get Accounts from Seeds ******************** 
+// *******************************************************
+
+      async function getAccountsFromSeeds() {
+        let net = getNet()
+        const client = new xrpl.Client(net)
+        results = 'Connecting to ' + getNet() + '....'
+        standbyResultField.value = results
+        await client.connect()
+        results += '\nConnected, finding wallets.\n'
+        standbyResultField.value = results
+      
+        // -----------------------------------Find the test account wallets    
+        var lines = seeds.value.split('\n');
+
+        const standby_wallet = xrpl.Wallet.fromSeed(lines[0])
+        const operational_wallet = xrpl.Wallet.fromSeed(lines[1])
+      
+        // -----------------------------------Get the current balance.
+        const standby_balance = (await client.getXrpBalance(standby_wallet.address))
+        const operational_balance = (await client.getXrpBalance(operational_wallet.address))  
+        
+        // ------------------Populate the fields for Standby and Operational accounts
+        standbyAccountField.value = standby_wallet.address
+        standbyPubKeyField.value = standby_wallet.publicKey
+        standbyPrivKeyField.value = standby_wallet.privateKey
+        standbySeedField.value = standby_wallet.seed
+        standbyBalanceField.value = (await client.getXrpBalance(standby_wallet.address))
+      
+        operationalAccountField.value = operational_wallet.address
+        operationalPubKeyField.value = operational_wallet.publicKey
+        operationalPrivKeyField.value = operational_wallet.privateKey
+        operationalSeedField.value = operational_wallet.seed
+        operationalBalanceField.value = (await client.getXrpBalance(operational_wallet.address))
+      
+       client.disconnect()
+            
+      } // End of getAccountsFromSeeds()
