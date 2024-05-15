@@ -19,7 +19,7 @@ invest in BCD and the public will thrive!!!
 
 I am importing some basic tools and java script code for the ease of API development.
 
-Some of these will not be very readable in preview mode and will need to be copy/pasted from edit mode to your project files
+Some of these tools and code will not be very readable in preview text page. Those will need to be copy/pasted from code text page to your project files
 
 # The following is a library of constants in js for transaction information
 
