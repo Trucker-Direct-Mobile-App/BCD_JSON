@@ -4,12 +4,12 @@
     0:{1 item
      "ModifiedNode":{6 items
       "FinalFields":{8 items
-      "Account":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+      "Account":string"enter wallet address here"
       "Balance":string"1076131363"
       "Domain":string"70686F656E6978756E636861696E65642E78"
       "EmailHash":string"4E01993985BC0417AA0E634D70BB39E7"
       "Flags":int8388608
-      "MessageKey":string"02000000000000000000000000363A87C690305456CAC7A6A94202AFAE62CD08..."
+      "MessageKey":string"enter message key here"
       "OwnerCount":int2
       "Sequence":int77716276
      }
@@ -35,7 +35,7 @@
   "Paths":[]0 items
   "SignerEntries":[]0 items
   "GenesisMints":[]0 items
- "Account":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+ "Account":string"enter wallet address here"
  "Domain":string"70686F656E6978756E636861696E65642E78"
  "Fee":int12
  "Flags":float2147483648
@@ -54,5 +54,5 @@
  "AccountName":NULL
  "DestinationName":NULL
  "AmendmentName":NULL
- "SigningPubKeyAccount":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+ "SigningPubKeyAccount":string"enter wallet address here"
 }
