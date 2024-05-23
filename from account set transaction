@@ -6,8 +6,8 @@
       "FinalFields":{8 items
       "Account":string"enter wallet address here"
       "Balance":string"1076131363"
-      "Domain":string"70686F656E6978756E636861696E65642E78"
-      "EmailHash":string"4E01993985BC0417AA0E634D70BB39E7"
+      "Domain":string"enter domain here"
+      "EmailHash":string"enter email hash here"
       "Flags":int8388608
       "MessageKey":string"enter message key here"
       "OwnerCount":int2
@@ -36,7 +36,7 @@
   "SignerEntries":[]0 items
   "GenesisMints":[]0 items
  "Account":string"enter wallet address here"
- "Domain":string"70686F656E6978756E636861696E65642E78"
+ "Domain":string"enter domain here"
  "Fee":int12
  "Flags":float2147483648
  "LastLedgerSequence":int88176515
