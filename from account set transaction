@@ -1,0 +1,58 @@
+ "root":{26 items
+  "meta":{3 items
+   "AffectedNodes":[1 item
+    0:{1 item
+     "ModifiedNode":{6 items
+      "FinalFields":{8 items
+      "Account":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+      "Balance":string"1076131363"
+      "Domain":string"70686F656E6978756E636861696E65642E78"
+      "EmailHash":string"4E01993985BC0417AA0E634D70BB39E7"
+      "Flags":int8388608
+      "MessageKey":string"02000000000000000000000000363A87C690305456CAC7A6A94202AFAE62CD08..."
+      "OwnerCount":int2
+      "Sequence":int77716276
+     }
+     "LedgerEntryType":string"AccountRoot"
+     "LedgerIndex":
+     string"D502DBD12C50A03C5A142D668A566C85CE8DC4A2BB64304340C060941C734822"
+      "PreviousFields":{3 items
+      "Balance":string"1076131375"
+      "Domain":string"68747470733A2F2F70686F656E6978756E636861696E65642E636F"
+      "Sequence":int77716275
+     }
+     "PreviousTxnID":
+     string"53B2EDC04EEDB8A9F5EEED19E84B6962E2F87036F682B988E7EF3456EF47A981"
+     "PreviousTxnLgrSeq":int87485479
+    }
+   }
+  ]
+  "TransactionIndex":int33
+  "TransactionResult":string"tesSUCCESS"
+ }
+  "AuthAccounts":[]0 items
+  "NFTokenOffers":[]0 items
+  "Paths":[]0 items
+  "SignerEntries":[]0 items
+  "GenesisMints":[]0 items
+ "Account":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+ "Domain":string"70686F656E6978756E636861696E65642E78"
+ "Fee":int12
+ "Flags":float2147483648
+ "LastLedgerSequence":int88176515
+ "Sequence":int77716275
+ "SigningPubKey":string"02F3B8C132759D7A909EFB908C9241391E2CACF46FD4A4D60166554D398FFAA9..."
+ "TransactionType":string"AccountSet"
+ "TxnSignature":string"3045022100C04062DAD505C2DE9731FB17FB7C342C0FC8B945222C57A5A41B9D..."
+ "hash":string"7B134E3BBDFA19382459895116B3B7645E23D7969AACED49140A5C560A1189E5"
+ "ledger_index":int88176479
+ "date":string"2024-05-23T02:41:41.000Z"
+ "ctid":string"C541775F00210000"
+  "Memos":[]0 items
+  "Signers":[]0 items
+  "Hooks":[]0 items
+ "AccountName":NULL
+ "DestinationName":NULL
+ "AmendmentName":NULL
+ "SigningPubKeyAccount":string"rMRo1ybMruxEkF4EgyEMpbjU95AqNnVHLF"
+}
